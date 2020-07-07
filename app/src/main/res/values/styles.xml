@@ -1,0 +1,27 @@
+<resources>
+    <!-- "parent" nos sirve para heredar -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Format" >
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/colorVerde</item>
+        <item name="android:typeface">monospace</item>
+    </style>
+<!-- Esta es otra forma de heredar-->
+<!-- Format.Button = Estamos heredando del las propiedades del formato anterior "Formato"-->
+    <style name="Format.Button" >
+        <!-- Customize your theme here. -->
+        <item name="android:background">@color/colorAccent</item>
+    </style>
+<!--    Agregamos el style para poder agregar el SplashScreen (imagen que se muestra mientras carga la aplicación)-->
+<!--    Heredamos el NoActionBar para que no se vea la barra superior de android-->
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/muebles_america</item>
+    </style>
+
+</resources>

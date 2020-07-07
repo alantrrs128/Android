@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<!--    textAllCaps: convierte todas las letras en mayusculas-->
+<!--    textColor: Cambia el color del texto-->
+<!--    textSize: cambio de tamaño de texto-->
+<!--    textStyle: asigna el estilo del texto ejemplo: bold, italic y normal-->
+<!--    typeface: cambia el tipo de letra-->
+<!--    maxLines: asignan las lineas de texto-->
+<!--    ellipsize="end" para indicar que hay mas texto y no se puede mostrar "..."-->
+<!--    minLines: las lineas que va a mostrar aunque no haya texto alguno.-->
+<!--    shadow: Agregar sombra al texto para ello se utilizan 4 elementos shadowColor, shadowDx, shadowDy y shadowRadius-->
+    <TextView
+        android:id="@+id/texto_vista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Muebles America"
+        android:textAllCaps="true"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:minLines="2"
+        android:shadowColor="@color/colorPrimary"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="2"/>
+</LinearLayout>

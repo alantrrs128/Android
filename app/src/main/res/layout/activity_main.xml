@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Format"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+<!--    xmlns:ads="http://schemas.android.com/apk/res-auto"    AdMod-->
+
+
+    <!--    El HorizontalScrollView funciona igual que el ScrollView pero de manera horizontal-->
+<!--    si queremos tener scrol de manera horizontal y vertical anidamos el ScrollView en el HorizontalView-->
+<!--    <HorizontalScrollView></HorizontalScrollView>-->
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--    textAllCaps: convierte todas las letras en mayusculas-->
+            <!--    textColor: Cambia el color del texto-->
+            <!--    textSize: cambio de tamaño de texto-->
+            <!--    textStyle: asigna el estilo del texto ejemplo: bold, italic y normal-->
+            <!--    typeface: cambia el tipo de letra-->
+            <!--    maxLines: asignan las lineas de texto-->
+            <!--    ellipsize="end" para indicar que hay mas texto y no se puede mostrar "..."-->
+            <!--    minLines: las lineas que va a mostrar aunque no haya texto alguno.-->
+            <!--    shadow: Agregar sombra al texto para ello se utilizan 4 elementos shadowColor, shadowDx, shadowDy y shadowRadius-->
+            <TextView
+                android:id="@+id/texto_vista"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="3"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:minLines="2"
+                android:shadowColor="@color/colorPrimary"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="2"
+                android:text="Muebles America"
+                android:textAllCaps="true"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:typeface="sans" />
+
+            <!--        marginLeft esta obsoleto e spor eso que utilizamos marginStart sin embargo si queremos que nuestra aplicación funcione
+                        en todas las versiones de Android necesitamos dejar los dos parametros-->
+            <!--        android:layout_marginLeft="10dp"-->
+            <!--        android:layout_marginStart="10dp"-->
+        <!--    <TextView-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:text="Muebles America"-->
+        <!--        android:layout_marginTop="100dp"-->
+        <!--        android:layout_margin="30dp"-->
+        <!--        android:padding="10dp"/>-->
+
+        <!--    Propiedades Button-->
+        <!--    onClick: Agregar actividad al boton-->
+        <!--    textColor: Color del texto-->
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="1"
+                android:layout_weight="1"
+                android:background="@color/colorNaranja"
+                android:text="@string/save"
+                android:textSize="@dimen/textSize"
+                android:onClick="save"
+                android:textColor="@android:color/black"/>
+
+            <Button
+                android:id="@+id/btnUpdate"
+                style="@style/Format.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="3"
+                android:layout_weight="1"
+                android:text="Actualizar" />
+
+            <Button
+                android:id="@+id/btnShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="1"
+                android:layout_weight="1"
+                android:text="Activity" />
+
+            <!--    Puedes utilizar los mismos atributos que en el TextView-->
+        <!--    hint: nombre de referencia-->
+        <!--    textColorHint: se le asigna un color al hint-->
+        <!--    ems: asigna el ancho del EditText solo si estamos utilizando wrap_content-->
+        <!--    enabled: habilitar o deshabilitar el cuadro de texto-->
+        <!--    inputType: tipo de cuadro de texto como: numbre, textPassword, textMultiLine, textPersonName, etc...-->
+        <!--    maxLength: cantidad de caracteres que permite ingresar-->
+        <!--    digits: limita a los caracteres que puedes utilizar-->
+
+        <!--    divider: Agregar imagen a la lista-->
+        <!--    dividerHeight: ancho de la imagne (divider)-->
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="337dp"
+                android:layout_height="350dp"
+                android:layout_column="3"
+                android:layout_row="1"
+                android:layout_rowSpan="15"
+                android:layout_weight="1"/>
+
+            <EditText
+                android:id="@+id/EditorDeTexto"
+                android:layout_width="97dp"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="3"
+                android:digits="abcde"
+                android:ems="10"
+                android:enabled="true"
+                android:hint="Nombre"
+                android:inputType="textPersonName"
+                android:maxLength="10"
+                android:text=""
+                android:textColorHint="@android:color/holo_red_light" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="4" >
+
+                <RadioButton
+                    android:id="@+id/radioButtonAzul"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Azul" />
+
+        <!--        focusableInTouchMode: le asignas el enfoque al radiobutton-->
+        <!--        checked: le asignas el check-->
+                <RadioButton
+                    android:id="@+id/radioButtonRojo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rojo"
+                    android:focusableInTouchMode="true"
+                    android:checked="true"/>
+            </RadioGroup>
+
+        <!--    spinnerMode: Diseño que va a tener el menu de opciones, tenemos 2 "dropdown" y "dialogo"-->
+        <!--            dropdown: mostramos una lista debajo del Spinner-->
+        <!--                    android:dropDownWidth="100dp": se utiliza con dropdown y es para especificar el ancho del spinner-->
+        <!--            dialogo: Se muestra una ventana sobre el spinner-->
+        <!--                    prompt="@string/titleSpinner": se utiliza para poner el titulo del spinner-->
+        <!--    popupBackground="drawable/imagen": le agregas un fondo de imagen al spinner cuando lo despliegas-->
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="4"
+                android:layout_row="5"
+                android:spinnerMode="dialog"
+                android:prompt="@string/titleSpinner"/>
+
+        <!--    style: se selecciona el estilo del la barra de progreso, como por ejemplo progressBarStyle: "circulito"-->
+        <!--    indeterminate: solo muestra que esta cargando sin embargo no coloca un porcentaje-->
+        <!--    indeterminateDuration: duracion del proceso-->
+        <!--    indeterminateBehavior: indica que el circulo de vueltas indeterminadas o que cuando cumpla un ciclo o sea la vuelta completa se regrese-->
+        <!--    max: lo utilizamos cuando queremos realizar un porsentaje y "Max" nos indica el maximo del proceso, para esto no se pieden utilizar los indeterminates-->
+        <!--    progress: el numero por el cual se incrementara la barra de proceso o sea si tiene 0 se muestra al principio o vacia y si max = 100 cuando le pongamos 100 la barra va a estar al final o llena-->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="254dp"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="3"
+                android:layout_row="6"
+                android:max="80"
+                android:progress="20"/>
+
+        <!--    El SeekBar viene heredado del ProgressBar es por ello que utiliza las mismas propiedads-->
+        <!--    progressDrawable: agregas  un color o una imagen de fondo-->
+        <!--    thumb: cambias el punto o circulo por una imagen se recomienda que dea de 24X24 pixeles-->
+        <!--    thumbTint: cambias el color del thumb-->
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="254dp"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="2"
+                android:layout_row="7" />
+
+            <SeekBar
+                android:id="@+id/seekBar2"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="254dp"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="2"
+                android:layout_row="8"
+                android:max="10"
+                android:progress="10" />
+
+            <TextView
+                android:id="@+id/txtPorcentaje"
+                android:layout_width="63dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="4"
+                android:text="0%" />
+
+            <QuickContactBadge
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="10"
+                android:src="@drawable/email" />
+
+            <QuickContactBadge
+                android:id="@+id/phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="10"
+                android:src="@drawable/phone" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="9"
+                android:text="Agregar contacto"
+                android:layout_columnSpan="2" />
+
+        <!--    RatingBar es una barra de estrellas para mostrar una calificacion o calificar-->
+        <!--    isIndicator: sirve solo para mostrar una calificación-->
+        <!--    numStars: cantidad de estrellas para calificar-->
+        <!--    rating: se le va agregando la calidicación-->
+        <!--    stepSize: de cuanto en cuanto va incrementando la calificacion-->
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="3"
+                android:layout_row="11"
+                android:numStars="5"
+                android:rating="3"
+                android:stepSize="0.1"/>
+
+            <!--    showText: con este atributo vamos a poder ver el texto-->
+        <!--    textOff se puede mostrar una imagen o texto cuando este desactivado-->
+        <!--    textOn: se podra mostrar una imagen o texto cuando este activado-->
+            <TextView
+                android:id="@+id/txtRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="12"
+                android:text="0 Estrellas" />
+
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="3"
+                android:layout_row="12"
+                android:showText="true"
+                android:text="Activar"
+                android:textOff="0"
+                android:textOn="1" />
+
+<!--            numColumns: se le indican el numero de columnas-->
+<!--            columnWidth: indicar el ancho de las columnas. si esta numColumns con un numero no se va a resperar columWidth solamente que tenga el atributo auto_fit-->
+<!--            horizontalSpacing: se indica el espacio entre casa columna-->
+<!--            verticalSpacing: se indica el espacio entre cada fila-->
+<!--            stretchMode: para estirar cada columna-->
+            <GridView
+                android:id="@+id/gridview1"
+                android:layout_width="match_parent"
+                android:layout_height="142dp"
+                android:layout_column="0"
+                android:layout_columnSpan="4"
+                android:layout_row="13"
+                android:layout_rowSpan="3"
+                android:numColumns="2" />
+
+<!--            WebView-->
+<!--            Necesitamos asignarle permisos de internet en el Manifest-->
+            <WebView
+                android:id="@+id/paginaWeb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_columnSpan="4"
+                android:layout_row="15" >
+                    <ProgressBar
+                        android:id="@+id/barraProgresoWeb"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:indeterminate="true"/>
+            </WebView>
+
+<!--            inputType: Espesifica el tipode texto que va a a ceptar el SearchView-->
+<!--            queryHint: Una pista de lo que el usuario debe de ingresar dentro del cuadro de texto-->
+<!--            maxWidth: ancho del cuadro de texto-->
+<!--            searchIcon: por default aparece un icono de una lupa pero con este atributo puedes cambiar el icono-->
+<!--            iconifiedByDefault: si se coloca True solo aparece el icono al darle click aparece el cuadro de busqueda si esta en False automaticamente aparece el cuadro-->
+            <SearchView
+                android:id="@+id/SearchView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="3"
+                android:layout_row="0"
+                android:inputType="number"
+                android:queryHint="Telefono"
+                android:maxWidth="300dp"
+                android:iconifiedByDefault="true"/>
+
+<!--            timePickerMode: se el asigna el tipo de diseño que va a tener el timePicker "clock" y "spinner"-->
+            <TimePicker
+                android:id="@+id/timePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="18"
+                android:layout_columnSpan="4"
+                android:timePickerMode="clock"/>
+
+            <TextView
+                android:id="@+id/txtHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="19"
+                android:text="" />
+
+<!--            timePickerMode: se el asigna el tipo de diseño que va a tener el datePicker "calendar" y "spinner"-->
+<!--            datePickerMode: para mostrar la vista del calendario. Por default sale el calendario, asi que no es necesario este parametro-->
+<!--            calendarTextColor: asigna el color de las letras-->
+<!--            headerBackground: Cambia el color de fondo-->
+<!--            spinnersShown: oculta el calendario-->
+            <DatePicker
+                android:id="@+id/datePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="20"
+                android:layout_columnSpan="4"
+                android:datePickerMode="calendar"
+                android:calendarViewShown="true"/>
+
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="21"
+                android:text="" />
+
+            <VideoView
+                android:id="@+id/videoView"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_column="0"
+                android:layout_columnSpan="4"
+                android:layout_row="22" />
+
+<!--            srcCompat: se le agregan imagenes vectoriales. Para poder utilizar imagenes vectoriales tenemos que hacer la configuracion
+                    en Gradle Script/build.gradle(Module: app) linea 15. Para crear una imagen vector lo podemos hacer con click derecho
+                    en la carpeta drawable - New - Vector asset -->
+<!--            scr: se le agregan imagenes jpg(raster)-->
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="23"
+                app:srcCompat="@android:drawable/sym_def_app_icon" />
+
+<!--            scaleType: nipulacion de la imagen por su tamaño o sea si es mas grande de las dimenciones que el estamos asignando segun la configuración
+|                   podemos que se vea la parde de la imagen de las dimenciones que le estamos ingresando o podemos configurar para que se
+                    adapte a las dimenciones que le colocamos-->
+<!--            adjustViewBounds: ajusta la el ImageView a las dimenciones de la imagen-->
+<!--            tint: cambia el color del icono (Solo utilizar con iconos y no con imagenes-->
+<!--            maxWidth y maxHeight: no sirve para asignar un tamaño maximo de la imagen-->
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_column="1"
+                android:layout_row="23"
+                app:srcCompat="@android:drawable/ic_menu_mapmode"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:tint="@color/colorPrimary"/>
+
+<!--            <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<GLIDE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
+<!--            vamos a utilizar Glade, esto nos sirve para poder cargar imagenes que se encuentren en internet y las carge mas rapido
+                    para ello vamos a utilizar un ImagenView.
+                    para poder utilizar es componente necesitamos cargarlo en Gradle Script/build.gradle(Module: app) con la siguiente linea
+                    implementation 'com.github.bumptech.glide:glide:4.7.1' que se encuentra en la linea 34-->
+
+            <ImageView
+                android:id="@+id/imageViewGlide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="24"
+                android:layout_columnSpan="4"/>
+
+
+            <Button
+                android:id="@+id/btnValidar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mostrar Tabla ViewStub"
+                android:textColor="@android:color/black"
+                android:layout_row="26"
+                android:layout_column="0"
+                android:onClick="validar"/>
+
+            <!--    En include agregamos informacion de otro archivo desde el principio, o sea que se carga aunque no se este mostrando-->
+            <!--    La etiqueta Include es como para importar una funcion de otro archivo como en este caso esta importando de la carpeta layout/table.xml-->
+            <!--    <include layout="@layout/table"-->
+            <!--        android:layout_width="wrap_content"-->
+            <!--        android:layout_height="wrap_content"/>-->
+
+            <!--    En ViewStub no cargamos o no agregamos el otro archivo si no hasta que se mande a llamar y si lo ocultamos se elimina-->
+            <!--    inflatedId: si ya se elimino el ViewStub se oculta, automaticamente se elimina y si se vuelve a cargar se "carga" con el nombre que se
+                        le coloco a inflatedId-->
+            <ViewStub android:id="@+id/ViewSubTable"
+                android:layout="@layout/table"
+                android:inflatedId="@+id/TwoViewSubTable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="27"
+                android:layout_column="0"/>
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapView"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_column="0"
+                android:layout_row="28" />
+
+<!--            <com.google.android.gms.ads.AdView-->
+<!--                android:id="@+id/adView"-->
+<!--                ads:adUnitId="@string/bannerId"-->
+<!--                ads:adSize="BANNER"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_column="0"-->
+<!--                android:layout_columnSpan="3"-->
+<!--                android:layout_row="29" />-->
+
+        </GridLayout>
+    </ScrollView>
+</GridLayout>

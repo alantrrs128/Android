@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Este archivo me sirve para determinar las dimenciones de los objetos y sus propiedades segun el tamaño de pantalla-->
+<resources>
+    <dimen name="textSize">20sp</dimen>
+</resources>

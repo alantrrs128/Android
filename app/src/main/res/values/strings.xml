@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Muebles America</string>
+    <string name="save">Guardar</string>
+    <string name="titleSpinner">Selecciona</string>
+<!--    Codigo que se obtiene en la pagina de Google Maps-->
+    <string name="api_key">AIzaSyCc013rlflsROSLXQa5Re2huyUcr_Fm2s0</string>
+<!--    Codigo que se obtiene en la pagina de AdMod y nos sirvepara la publicidad-->
+    <string name="bannerId">ca-app-pub-8014970728160639/1622318335</string>
+</resources>

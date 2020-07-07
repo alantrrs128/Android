@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--android:stretchColumns="*" con este atributo es para distribuir los batones por toda la fila pero puede que cuando no quepan se
+        salgan de la pantalla, podemos indicarle cuales columnos son las que queremos que se expandan"0,1,2" o solo poner un "*"
+        para indicarle que todas-->
+<!--android:shrinkColumns="*" Funciona igual que el anterior solamente que este atributo no hace que los objetos se salgan de la pantalla-->
+<!--android:collapseColumns="2" con este atributo desapareces una columna ("") en esta parte le indicas que columna vas a ocultar inicioando desde 0-->
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:shrinkColumns="*"
+
+    >
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <Button
+            android:id="@+id/button34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/button33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/button32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/button29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/button27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/button15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/button12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <Button
+            android:id="@+id/button28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+<!--android:layout_span="2" Indicamos cuantas columnas quiere avarcar -->
+        <Button
+            android:id="@+id/button26"
+            android:layout_span="2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+<!--android:layout_column="5" le indicas si se quiere posicionar en una columna en especial-->
+        <Button
+            android:id="@+id/button25"
+            android:layout_column="5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+    </TableRow>
+</TableLayout>
